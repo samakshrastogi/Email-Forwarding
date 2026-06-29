@@ -1,0 +1,16 @@
+Subject: Application for Full Stack Developer Position
+
+Hello {{contact}},
+
+I hope you are doing well.
+
+I am writing to apply for a Full Stack Developer role at {{company}}. I am currently working as a Software Engineer Intern at Nokia, with nearly 10 months of hands-on experience in developing and maintaining full-stack applications.
+
+My experience includes working with Python, Django, REST APIs, frontend technologies, and automation tools to build scalable and efficient solutions in a production environment.
+
+I am eager to contribute my practical industry experience and continue growing as a full stack engineer within your team.
+
+Please find my resume attached. I would welcome the opportunity to discuss this role further.
+
+Best regards,
+Samaksh Rastogi

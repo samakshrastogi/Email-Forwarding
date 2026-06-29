@@ -1,0 +1,16 @@
+Subject: Application for Machine Learning Engineer Position
+
+Hello {{contact}},
+
+I hope this message finds you well.
+
+I am writing to express my interest in a Machine Learning Engineer role at {{company}}. I am currently a Software Engineer Intern at Nokia, with experience applying machine learning techniques in real-world use cases, along with strong proficiency in Python.
+
+My work involves data processing, model development, experimentation, and automation, with a focus on building practical and scalable ML solutions.
+
+I am keen to contribute to data-driven projects and further strengthen my expertise in applied machine learning within an industry setting.
+
+Please find my resume attached for your review. I look forward to connecting.
+
+Kind regards,
+Samaksh Rastogi

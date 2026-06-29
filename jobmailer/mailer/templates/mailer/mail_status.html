@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mail Status Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .toolbar input,
+        .toolbar select,
+        .toolbar button,
+        .toolbar a {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .sent {
+            color: green;
+            font-weight: bold;
+        }
+
+        .not-sent {
+            color: red;
+            font-weight: bold;
+        }
+
+        .btn {
+            text-decoration: none;
+            border: 1px solid #2c3e50;
+            background: #2c3e50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            border-color: #f39c12;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .muted {
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>📧 Job Application Mail Status</h2>
+
+    <div class="toolbar">
+        <form method="get" style="display:flex; gap:10px;">
+            <input type="text" name="q" placeholder="Search company / email / domain" value="{{ search_query }}">
+
+            <select name="status">
+                <option value="">All</option>
+                <option value="sent" {% if status == "sent" %}selected{% endif %}>Sent</option>
+                <option value="not_sent" {% if status == "not_sent" %}selected{% endif %}>Not Sent</option>
+            </select>
+
+            <button type="submit" class="btn">Search</button>
+            <a href="{% url 'mail_status' %}" class="btn btn-secondary">Reset</a>
+        </form>
+
+        <form method="post" action="{% url 'send_all' %}"
+            onsubmit="return confirm('Send emails to all active companies?');">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-warning">
+                📤 Send Mail to All
+            </button>
+        </form>
+
+        <a href="{% url 'export_csv' %}" class="btn btn-warning">Export CSV</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Company Name</th>
+                <th>Contact Name</th>
+                <th>Email</th>
+                <th>Domain</th>
+                <th>Status</th>
+                <th>Last Sent</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in companies %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ c.company_name }}</td>
+                <td>{{ c.contact_name }}</td>
+                <td>{{ c.email }}</td>
+                <td>{{ c.domain.name }}</td>
+                <td class="{% if c.last_sent %}sent{% else %}not-sent{% endif %}">
+                    {{ c.mail_status }}
+                </td>
+                <td>
+                    {% if c.last_sent %}
+                    {{ c.last_sent|date:"Y-m-d H:i" }}
+                    {% else %}
+                    <span class="muted">—</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{% url 'send_again' c.id %}" class="btn btn-secondary"
+                        onclick="return confirm('Send email again to {{ c.company_name }}?');">
+                        Send Again
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8">No records found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>

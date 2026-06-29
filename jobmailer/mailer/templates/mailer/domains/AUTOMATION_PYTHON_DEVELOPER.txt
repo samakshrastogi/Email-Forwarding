@@ -1,0 +1,14 @@
+Subject: Application for Python Automation Developer Position
+
+Hello {{contact}},
+
+I hope this message finds you well.
+
+I am writing to apply for a Python Automation Developer role at {{company}}. During my 10-month internship at Nokia, I have worked on automation scripts, workflow optimization, and tooling using Python to improve efficiency and reliability.
+
+I enjoy building automation solutions that reduce manual effort and improve system performance.
+
+Please find my resume attached. I look forward to the opportunity to discuss this further.
+
+Best regards,
+Samaksh Rastogi

@@ -1,0 +1,18 @@
+Subject: Application for Software Developer Position (Full Stack | ML | Python)
+
+Hello {{contact}},
+
+I hope this message finds you well.
+
+I am writing to express my interest in software development opportunities at {{company}}. I am currently working as a Software Engineer Intern at Nokia, with nearly 10 months of hands-on industry experience, and my internship is scheduled to conclude in June 2026.
+
+During my time at Nokia, I have worked across multiple domains including Full Stack Development, Python, Django, Machine Learning, and Automation. My experience involves building and maintaining web applications, developing backend services and REST APIs, working with data-driven solutions, and creating automation tools to improve efficiency and reliability in production environments.
+
+I am eager to apply my practical experience, strong problem-solving skills, and continuous learning mindset to contribute effectively to your engineering team.
+
+Please find my resume attached for your review. I would welcome the opportunity to discuss how my skills and experience align with your organization’s needs.
+
+Thank you for your time and consideration.
+
+Best regards,
+Samaksh Rastogi

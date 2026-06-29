@@ -1,0 +1,14 @@
+Subject: Application for Python / Django Developer Role
+
+Hello {{contact}},
+
+I hope you are doing well.
+
+I am applying for a Python / Django Developer position at {{company}}. I am currently working as a Software Engineer Intern at Nokia, where I have gained hands-on experience building backend services, RESTful APIs, and database-driven applications using Python and Django.
+
+I have worked in a production environment, collaborating with teams to deliver reliable and maintainable backend solutions.
+
+Please find my resume attached. I would be glad to discuss how my experience aligns with your requirements.
+
+Best regards,
+Samaksh Rastogi
